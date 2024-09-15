@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "name": "rust-docs-bot",
+  "description": "A Discord bot for fetching the Rust language-related documentation.",
+  "author": "Danial Raza <danialrazafb@gmail.com>",
+  "license": "Apache-2.0",
+  "main": "dist/index.js",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "commitlint": "commitlint --edit",
+    "dev": "pnpm build && pnpm start",
+    "deploy": "pnpm build && node --env-file=.env dist/deploy-commands.js",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "eslint --fix src",
+    "lint:check": "eslint src",
+    "prepare": "is-ci || husky",
+    "start": "node --env-file=.env dist/index.js"
+  },
+  "dependencies": {
+    "@discordjs/core": "^2.0.0",
+    "discord.js": "^14.16.2"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.5.0",
+    "@commitlint/config-angular": "^19.5.0",
+    "@types/node": "^22.5.5",
+    "eslint": "^8.57.0",
+    "eslint-config-neon": "^0.1.62",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "husky": "^9.1.6",
+    "is-ci": "^3.0.1",
+    "lint-staged": "^15.2.10",
+    "prettier": "^3.3.3",
+    "typescript": "^5.6.2",
+    "zod": "^3.23.8"
+  },
+  "engines": {
+    "node": ">=20",
+    "pnpm": "9.10.0"
+  },
+  "packageManager": "pnpm@9.10.0",
+  "volta": {
+    "node": "20.17.0",
+    "pnpm": "9.10.0"
+  }
+}
