@@ -1,8 +1,7 @@
-/* eslint-disable @typescript-eslint/consistent-type-definitions */
-
 import type { Collection } from "discord.js";
 import type { Command } from "./command.js";
 
+/* eslint-disable @typescript-eslint/consistent-type-definitions */
 declare global {
   namespace NodeJS {
     interface ProcessEnv {
@@ -17,6 +16,20 @@ declare module "discord.js" {
     commands: Collection<string, Command>;
   }
 }
+/* eslint-enable @typescript-eslint/consistent-type-definitions */
+
+export type Documentation = {
+  args?: [{ name: string; type: string }];
+  deprecation: boolean;
+  docs: string;
+  name: string;
+  output?: string;
+  visibility: string;
+};
+
+export type DocsFile = {
+  index: Record<string, Documentation>;
+};
 
 /**
  * A predicate to check if a structure is of a certain type.
