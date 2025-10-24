@@ -1,6 +1,6 @@
 // @ts-expect-error - Package doesn't have types
 import levenSort from "leven-sort";
-import _stdDocsJson from "../data/std-docs.json" assert { type: "json" };
+import _stdDocsJson from "../data/std-docs.json" with { type: "json" };
 import type { DocsFile, Documentation } from "../types/index.js";
 
 const stdDocsJson = _stdDocsJson as unknown as DocsFile;

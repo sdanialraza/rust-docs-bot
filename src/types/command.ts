@@ -23,7 +23,7 @@ export type Command = {
  */
 export const commandSchema = z.object({
   autocomplete: z.function(),
-  data: z.record(z.any()),
+  data: z.record(z.any(), z.any()),
   execute: z.function(),
 });
 

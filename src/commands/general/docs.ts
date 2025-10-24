@@ -67,4 +67,4 @@ export default {
       ephemeral: hide,
     });
   },
-} as const satisfies Command;
+} satisfies Command;
